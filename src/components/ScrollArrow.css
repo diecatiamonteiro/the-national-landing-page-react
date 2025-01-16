@@ -1,0 +1,23 @@
+.scroll-arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.scroll-up {
+  bottom: 2rem;
+}
+
+.scroll-down {
+  bottom: 2rem;
+}
+
+.arrow {
+  display: block;
+  font-size: 60px;
+  color: rgb(173, 173, 173);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 0.5;
+}
