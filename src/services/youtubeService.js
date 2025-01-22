@@ -1,4 +1,5 @@
 const albumVideos = {
+  Rome: "mmK1fVm4QrE",
   "Laugh Track": "yl-Jy383W9Q", // Laugh Track
   "First Two Pages of Frankenstein": "zdU0qwZKLfU", // Tropic Morning News
   "Juicy Sonic Magic (Live in Berkeley September 24-25 2018)": "CbXnnn8z1tE", // Rylan
@@ -16,10 +17,10 @@ const albumVideos = {
   "The National (2021 Remaster)": "tITXa390ePE", // Son (Remaster)
 };
 
-export const getAlbumVideos = (albumName) => {
-  console.log("Looking for videos for album:", albumName);
-  const videos = albumVideos[albumName];
-  console.log("Found videos:", videos);
+// For future additions, copy the link from Share and extract only the video id
+// https://youtu.be/mmK1fVm4QrE?feature=shared => the video id is mmK1fVm4QrE
 
+export const getAlbumVideos = (albumName) => {
+  const videos = albumVideos[albumName];
   return videos ? [{ id: videos }] : [];
 };
