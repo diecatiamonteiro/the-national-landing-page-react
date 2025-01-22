@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -35,7 +39,6 @@ body {
 .page-content {
   color: white;
   margin: 20vh 20vh;
-
 }
 
 button {
