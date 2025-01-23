@@ -11,7 +11,7 @@ function Home() {
         <img
           src="public/band.webp"
           alt="the national band"
-          className="background-image"
+          className="background-image w-full h-full object-cover object-[65%_50%]"
         />
         <ScrollDownArrow />
       </div>

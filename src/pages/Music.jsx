@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { getTheNationalAlbumsFromSpotify } from "../services/spotifyService";
 import { getAlbumVideos } from "../services/youtubeService";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import "./Music.css";
 
 export default function Music() {
@@ -73,9 +74,9 @@ export default function Music() {
 
   return (
     <div className="page-content">
-      <h1 className="albums-page-title">Albums released</h1>
+      <h2 className="albums-page-title text-xl xl:text-2xl">Albums released</h2>
       <motion.div
-        className="albums-grid"
+        className="albums-grid mt-12 mx-4 md:mx-12 lg:mx-52"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -94,10 +95,10 @@ export default function Music() {
               className="album-cover-container"
               onClick={() => {
                 const videos = albumVideos[album.id];
-                console.log("Album name:", album.name); // Add this
-                console.log("Videos:", videos); // Add this
+                console.log("Album name:", album.name);
+                console.log("Videos:", videos);
                 if (videos?.length > 0) {
-                  console.log("Selected video ID:", videos[0].id); // Add this
+                  console.log("Selected video ID:", videos[0].id);
                   setSelectedVideo(videos[0].id);
                 }
               }}
@@ -107,7 +108,7 @@ export default function Music() {
                 alt={`${album.name} cover`}
                 className="album-cover"
               />
-              <div className="play-overlay">
+              <div className="play-overlay opacity-70 lg:opacity-0 transition-opacity duration-300">
                 <span>▶ Watch Video</span>
               </div>
             </div>
@@ -123,9 +124,10 @@ export default function Music() {
                   href={album.external_urls.spotify}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="play-button"
+                  className="play-button flex flex-row gap-3 justify-center items-center"
                 >
-                  Spotify
+                  Listen on Spotify
+                  <FaExternalLinkAlt className="text-sm md:text-base" />
                 </a>
               </div>
             </div>
@@ -144,7 +146,7 @@ export default function Music() {
             onClick={() => setSelectedVideo(null)}
           >
             <motion.div
-              className="modal-content"
+              className="modal-content w-[95%] lg:w-[70%]"
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.5, opacity: 0 }}
