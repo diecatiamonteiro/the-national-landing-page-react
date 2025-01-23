@@ -9,7 +9,7 @@ function Home() {
       {/* These divs become the "children" prop in PageTransition */}
       <div className="home-container">
         <img
-          src="public/band.webp"
+          src="/pageImages/band.webp"
           alt="the national band"
           className="background-image w-full h-full object-cover object-[65%_50%]"
         />
